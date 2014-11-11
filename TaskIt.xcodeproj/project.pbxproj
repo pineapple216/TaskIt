@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D065A8D1A11240E00A53B73 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D065A8C1A11240E00A53B73 /* TaskCell.swift */; };
+		5D29F1B71A12363D00D4569F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29F1B61A12363D00D4569F /* TaskModel.swift */; };
 		5D64B8671A0FC1E20025B96A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B8661A0FC1E20025B96A /* AppDelegate.swift */; };
 		5D64B8691A0FC1E20025B96A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B8681A0FC1E20025B96A /* ViewController.swift */; };
 		5D64B86C1A0FC1E20025B96A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D64B86A1A0FC1E20025B96A /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		5D065A8C1A11240E00A53B73 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		5D29F1B61A12363D00D4569F /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		5D64B8611A0FC1E20025B96A /* TaskIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D64B8651A0FC1E20025B96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D64B8661A0FC1E20025B96A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D29F1B51A1235D100D4569F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D29F1B61A12363D00D4569F /* TaskModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5D64B8581A0FC1E20025B96A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 			children = (
 				5D64B8661A0FC1E20025B96A /* AppDelegate.swift */,
 				5D64B8681A0FC1E20025B96A /* ViewController.swift */,
+				5D29F1B51A1235D100D4569F /* Model */,
 				5D065A8C1A11240E00A53B73 /* TaskCell.swift */,
 				5D64B86A1A0FC1E20025B96A /* Main.storyboard */,
 				5D64B86D1A0FC1E20025B96A /* Images.xcassets */,
@@ -217,6 +228,7 @@
 			files = (
 				5D64B8691A0FC1E20025B96A /* ViewController.swift in Sources */,
 				5D065A8D1A11240E00A53B73 /* TaskCell.swift in Sources */,
+				5D29F1B71A12363D00D4569F /* TaskModel.swift in Sources */,
 				5D64B8671A0FC1E20025B96A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
