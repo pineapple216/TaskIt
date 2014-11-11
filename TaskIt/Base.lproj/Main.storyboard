@@ -65,6 +65,7 @@
                     <navigationItem key="navigationItem" id="Hyg-tY-yJh"/>
                     <connections>
                         <outlet property="tableView" destination="goM-L5-hnW" id="oqb-ER-8f6"/>
+                        <segue destination="rBo-nt-9Yr" kind="show" identifier="showTaskDetail" id="eD0-Cn-bNI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,6 +89,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRD-bg-7aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="458" y="1042"/>
+        </scene>
+        <!--Task Detail View Controller-->
+        <scene sceneID="Oh3-zz-ADB">
+            <objects>
+                <viewController id="rBo-nt-9Yr" customClass="TaskDetailViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NVN-lP-tCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="6LA-kT-n5c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rgy-ke-qbL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-wG-tIL">
+                                <rect key="frame" x="16" y="95" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Subtask" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phu-f8-4Zr">
+                                <rect key="frame" x="16" y="157" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3AB-FW-cm8">
+                                <rect key="frame" x="0.0" y="219" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="437403184.84970999">
+                                    <!--2014-11-11 12:53:04 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="3AB-FW-cm8" id="FUI-ox-eLc"/>
+                        <outlet property="subtaskTextField" destination="phu-f8-4Zr" id="Eh5-4r-9dp"/>
+                        <outlet property="taskTextField" destination="BNo-wG-tIL" id="csf-TR-NDC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PE4-fw-JZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="1039"/>
         </scene>
     </scenes>
 </document>
