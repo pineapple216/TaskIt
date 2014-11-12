@@ -28,7 +28,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         self.tableView.reloadData()
-        
+    }
+    
+    // Reload the data in the tableView when this viewController becomes the main view controller
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,12 +52,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // Set the detailTaskModel in the destinationVC to contain the currently selected task
             detailVC.detailTaskModel = thisTask
+            detailVC.mainVC = self
         }
         
         else if segue.identifier == "showTaskAdd" {
             let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
             addTaskVC.mainVC = self
         }
+        
     }
     
     // MARK: IBAction

@@ -134,7 +134,11 @@
                                 <action selector="cancelButtonTapped:" destination="rBo-nt-9Yr" id="uyr-Tg-5hi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="89c-x5-yGs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="89c-x5-yGs">
+                            <connections>
+                                <action selector="doneBarButtonItemPressed:" destination="rBo-nt-9Yr" id="95Z-eP-e3o"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dueDatePicker" destination="3AB-FW-cm8" id="FUI-ox-eLc"/>
