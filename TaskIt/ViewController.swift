@@ -48,10 +48,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Set the detailTaskModel in the destinationVC to contain the currently selected task
             detailVC.detailTaskModel = thisTask
         }
+        
+        else if segue.identifier == "showTaskAdd" {
+            let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
+            addTaskVC.mainVC = self
+        }
+    }
+    
+    // MARK: IBAction
+    
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("showTaskAdd", sender: self)
     }
     
     
-    // UITableViewDataSource
+    
+    // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.taskArray.count
     }
@@ -70,7 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    // UITableViewDelegate
+    // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println(indexPath.row)
         
