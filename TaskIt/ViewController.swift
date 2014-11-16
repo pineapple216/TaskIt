@@ -33,6 +33,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Reload the data in the tableView when this viewController becomes the main view controller
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        taskArray = taskArray.sorted{
+            (taskOne:TaskModel, taskTwo:TaskModel) -> Bool in
+            // Comparison logic here
+            
+            return taskOne.date.timeIntervalSince1970 < taskTwo.date.timeIntervalSince1970
+        }
+        
         self.tableView.reloadData()
     }
 
@@ -95,7 +103,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         performSegueWithIdentifier("showTaskDetail", sender: self)
     }
+    
+    // Helper Functions
+    
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
