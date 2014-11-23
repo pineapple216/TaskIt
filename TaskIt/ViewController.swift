@@ -17,22 +17,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let date1 = Date.from(year: 2014, month: 05, day: 20)
-        let date2 = Date.from(year: 2014, month: 03, day: 3)
-        let date3 = Date.from(year: 2014, month: 12, day: 13)
-        
-        let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: date1, completed: false)
-        let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2, completed: false)
-        let taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg Day", date: date3, completed: false)]
-        
-        // Completed array for tasks that are completed
-        var completedArray = [TaskModel(task: "Code", subTask: "Task Project", date:date2, completed: true)]
-        
-        
-        baseArray = [taskArray, completedArray]
-        
-        self.tableView.reloadData()
+		
+		
+		
     }
     
     // Reload the data in the tableView when this viewController becomes the main view controller
@@ -152,9 +139,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		baseArray[indexPath.section].removeAtIndex(indexPath.row)
         tableView.reloadData()
-		
-		
-        
     }
     
 }
