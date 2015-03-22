@@ -9,13 +9,21 @@
 import UIKit
 import CoreData
 
+protocol AddTaskViewControllerDelegate{
+	func addTask(message:String)
+	func addTaskCanceled(message:String)
+}
+
+
+
 class AddTaskViewController: UIViewController {
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var subTaskTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
-    
+	var delegate:AddTaskViewControllerDelegate?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +38,7 @@ class AddTaskViewController: UIViewController {
     // MARK: IBActions - Bar buttons
     @IBAction func cancelButtonTapped(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
+		delegate?.addTaskCanceled("Task was not added!")
     }
     
     @IBAction func addTaskButtonTapped(sender: UIButton) {
@@ -40,10 +49,23 @@ class AddTaskViewController: UIViewController {
 		
 		let task = TaskModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
 		
-		task.task = taskTextField.text
+		if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCapitalizeTaskKey) == true{
+			task.task = taskTextField.text.capitalizedString
+		}
+		else{
+			task.task = taskTextField.text
+		}
+		
 		task.subtask = subTaskTextField.text
 		task.date = dueDatePicker.date
-		task.completed = false
+		
+		if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCompleteNewToDoKey) == true{
+			task.completed = true
+		}
+		else{
+			task.completed = false
+		}
+		
 		
 		// Save changes to our entity
 		appDelegate.saveContext()
@@ -59,6 +81,7 @@ class AddTaskViewController: UIViewController {
 		}
 		
         self.dismissViewControllerAnimated(true, completion: nil)
+		delegate?.addTask("Task Added")
     }
     
 

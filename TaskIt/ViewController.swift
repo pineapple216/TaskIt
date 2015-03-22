@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, TaskDetailViewControllerDelegate, AddTaskViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -51,10 +51,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // Set the detailTaskModel in the destinationVC to contain the currently selected task
             detailVC.detailTaskModel = thisTask
+			detailVC.delegate = self
         }
         
         else if segue.identifier == "showTaskAdd" {
             let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
+			addTaskVC.delegate = self
         }
         
     }
@@ -104,24 +106,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "To do"
-        }
-        else {
-            return "Completed"
-        }
+		if fetchedResultsController.sections?.count == 1{
+			let fetchedObjects = fetchedResultsController.fetchedObjects!
+			let testTask:TaskModel = fetchedObjects[0] as TaskModel
+			
+			if testTask.completed == true{
+				return "Completed"
+			}
+			else{
+				return "To do"
+			}
+		}
+		else{
+			if section == 0 {
+				return "To do"
+			}
+			else {
+				return "Completed"
+			}
+		}
     }
-    
+	
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
 		
-		if indexPath.section == 0 {
-			thisTask.completed = true
-		}
-		else{
+		if thisTask.completed == true{
 			thisTask.completed = false
 		}
+		else{
+			thisTask.completed = true
+		}
+		
 		(UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
     }
 	
@@ -149,7 +165,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		
 		return fetchedResultsController
 	}
-    
+	
+	// MARK: TaskDetailViewControllerDelegate
+	
+	func taskDetailEdited() {
+		showAlert()
+	}
+	
+	// MARK: AddTaskViewControllerDelegate
+	
+	func addTaskCanceled(message: String) {
+		showAlert(message: message)
+	}
+	
+	func addTask(message: String) {
+		showAlert(message: message)
+	}
+	
+	func showAlert(message:String = "Congratulations"){
+		var alert = UIAlertController(title: "Change Made!", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+		alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
+		self.presentViewController(alert, animated: true, completion: nil)
+	}
+	
 }
 
 

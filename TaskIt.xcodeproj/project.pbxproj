@@ -10,6 +10,7 @@
 		5D065A8D1A11240E00A53B73 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D065A8C1A11240E00A53B73 /* TaskCell.swift */; };
 		5D29F1B91A123D4400D4569F /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29F1B81A123D4400D4569F /* TaskDetailViewController.swift */; };
 		5D29F1BB1A1257E900D4569F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D29F1BA1A1257E900D4569F /* Date.swift */; };
+		5D2B8A181AA0CA9C0023A991 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B8A171AA0CA9C0023A991 /* SettingsViewController.swift */; };
 		5D3CE8E91A22238F00BCF327 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3CE8E81A22238F00BCF327 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5D64B8671A0FC1E20025B96A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B8661A0FC1E20025B96A /* AppDelegate.swift */; };
 		5D64B8691A0FC1E20025B96A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B8681A0FC1E20025B96A /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		5D065A8C1A11240E00A53B73 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		5D29F1B81A123D4400D4569F /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		5D29F1BA1A1257E900D4569F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5D2B8A171AA0CA9C0023A991 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5D3CE8E81A22238F00BCF327 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5D64B8611A0FC1E20025B96A /* TaskIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D64B8651A0FC1E20025B96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				5D64B8681A0FC1E20025B96A /* ViewController.swift */,
 				5D29F1B81A123D4400D4569F /* TaskDetailViewController.swift */,
 				5D7F07DA1A126C7100682576 /* AddTaskViewController.swift */,
+				5D2B8A171AA0CA9C0023A991 /* SettingsViewController.swift */,
 				5D065A8C1A11240E00A53B73 /* TaskCell.swift */,
 				5D29F1BA1A1257E900D4569F /* Date.swift */,
 				5DA3F0A01A223B76000145EF /* TaskItModel.xcdatamodeld */,
@@ -242,6 +245,7 @@
 				5D29F1B91A123D4400D4569F /* TaskDetailViewController.swift in Sources */,
 				5DA3F0A41A223F16000145EF /* TaskModel.swift in Sources */,
 				5D7F07DB1A126C7100682576 /* AddTaskViewController.swift in Sources */,
+				5D2B8A181AA0CA9C0023A991 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
